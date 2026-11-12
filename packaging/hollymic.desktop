@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=HollyMic
+GenericName=Wireless mic control
+Comment=Hollyland Lark M2: noise cancellation, volume, battery, firmware check
+Exec=hollymic --show
+Icon=hollymic
+Terminal=false
+Categories=AudioVideo;Audio;Settings;HardwareSettings;
+Keywords=Hollyland;Lark;M2;microphone;mic;noise;
+StartupWMClass=hollymic
+SingleMainWindow=true

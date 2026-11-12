@@ -1,0 +1,27 @@
+{
+  "editor.formatOnSave": true,
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer",
+    "editor.rulers": [120]
+  },
+  "[shellscript]": {
+    "editor.tabSize": 2
+  },
+  "rust-analyzer.check.command": "clippy",
+  "rust-analyzer.check.allTargets": true,
+  "rust-analyzer.cargo.features": [],
+  "rust-analyzer.imports.granularity.group": "module",
+  "files.exclude": {
+    "target": true,
+    "dist": true
+  },
+  "search.exclude": {
+    "target": true,
+    "dist": true,
+    "Cargo.lock": true
+  },
+  "files.watcherExclude": {
+    "**/target/**": true
+  },
+  "shellcheck.customArgs": ["-S", "warning"]
+}

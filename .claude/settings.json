@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(cargo build:*)",
+      "Bash(cargo test:*)",
+      "Bash(cargo check:*)",
+      "Bash(cargo clippy:*)",
+      "Bash(cargo fmt:*)",
+      "Bash(cargo run:*)",
+      "Bash(cargo tree:*)",
+      "Bash(./target/debug/hollymic:*)",
+      "Bash(./target/release/hollymic:*)",
+      "Bash(scripts/screenshots.sh:*)",
+      "Bash(scripts/package.sh:*)",
+      "Bash(bash scripts/screenshots.sh:*)",
+      "Bash(bash scripts/package.sh:*)",
+      "Bash(shellcheck:*)",
+      "Bash(lsusb:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)"
+    ],
+    "deny": [
+      "Bash(sudo:*)",
+      "Read(./target/**)",
+      "Read(./dist/**)"
+    ]
+  }
+}

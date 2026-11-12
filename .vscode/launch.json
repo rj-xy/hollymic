@@ -1,0 +1,36 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "HollyMic (demo receiver)",
+      "cargo": { "args": ["build", "--bin=hollymic"] },
+      "args": ["--demo", "--show"],
+      "env": { "RUST_LOG": "hollymic=debug" }
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "HollyMic (real receiver)",
+      "cargo": { "args": ["build", "--bin=hollymic"] },
+      "args": ["--show"],
+      "env": { "RUST_LOG": "hollymic=debug" }
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "hollymic status (real receiver)",
+      "cargo": { "args": ["build", "--bin=hollymic"] },
+      "args": ["status"],
+      "env": { "RUST_LOG": "hollymic=trace" }
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Unit tests",
+      "cargo": { "args": ["test", "--no-run", "--bin=hollymic"] },
+      "args": []
+    }
+  ]
+}

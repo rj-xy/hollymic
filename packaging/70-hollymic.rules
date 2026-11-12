@@ -1,0 +1,8 @@
+# HollyMic: let the logged-in user talk to a Hollyland Lark M2 receiver without root.
+# usb: HollyMic claims interface 0 (HID control) over usbfs; the audio stays with snd-usb-audio.
+# hidraw: also lets browser WebHID pages (khromov/hollyland-web-ui) write to it.
+SUBSYSTEM=="usb", ATTR{idVendor}=="3547", ATTR{idProduct}=="0007", TAG+="uaccess"
+SUBSYSTEM=="usb", ATTR{idVendor}=="3547", ATTR{idProduct}=="0008", TAG+="uaccess"
+SUBSYSTEM=="usb", ATTR{idVendor}=="4417", ATTR{idProduct}=="0020", TAG+="uaccess"
+SUBSYSTEM=="usb", ATTR{idVendor}=="4417", ATTR{idProduct}=="0021", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3547", ATTRS{idProduct}=="0007|0008", TAG+="uaccess"
