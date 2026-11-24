@@ -24,7 +24,7 @@ HollyMic: a Rust tray app for the Hollyland **Lark M2** wireless mic (Linux firs
 ```bash
 cargo build && cargo test
 cargo clippy --all-targets            # keep it at zero warnings
-cargo check --target aarch64-apple-darwin   # macOS must keep compiling
+cargo clippy --all-targets --target aarch64-apple-darwin -- -D warnings   # macOS must stay clean (CI runs it)
 cargo fmt                             # rustfmt.toml: 120 columns
 ./target/debug/hollymic --demo        # simulated receiver; temp settings, never the real ones
 ./target/debug/hollymic status        # real receiver, read-only

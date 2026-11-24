@@ -131,7 +131,7 @@ pub fn run(opts: RunOptions) -> Result<()> {
         );
         dev.stop();
         ipc::cleanup();
-        return r.map_err(|e| anyhow::anyhow!("window: {e}"));
+        r.map_err(|e| anyhow::anyhow!("window: {e}"))
     }
 
     #[cfg(not(target_os = "macos"))]
