@@ -28,8 +28,8 @@ name="hollymic-$version-$os-$arch"
 
 if [[ ${1:-} != --skip-build ]]; then
   info "building release $version (log: target/package-build.log)"
-  # Capped so the build can't take the whole laptop (see AGENTS.md).
-  if command -v systemd-run >/dev/null && [[ $os == linux ]]; then
+  # Capped so the build can't take the whole laptop (see AGENTS.md); not on CI runners.
+  if [[ -z ${CI:-} ]] && command -v systemd-run >/dev/null && [[ $os == linux ]]; then
     systemd-run --user --scope -q -p MemoryMax=6G cargo build --release --locked -j 4 >target/package-build.log 2>&1 \
       || { tail -n 30 target/package-build.log; fail "cargo build failed"; }
   else

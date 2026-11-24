@@ -46,5 +46,6 @@ scripts/package.sh                    # dist/ tarball
 
 ## Git
 
-- Branch `main`. No remote yet; the GitHub repo comes later (`rj-xy`, never the work account).
+- Branch `staging` (renamed from `main` on 2026-11-24), remote `origin` = [rj-xy/hollymic](https://github.com/rj-xy/hollymic) (public; `rj-xy`, never the work account; `GH_TOKEN="$(gh auth token --user rj-xy)"` for `gh`). Commits as `RJ-XY <2442596+rj-xy@users.noreply.github.com>` (repo git config).
+- CI: [.github/workflows/ci.yml](.github/workflows/ci.yml) on every push and PR: fmt, clippy `-D warnings`, tests, shellcheck and a Linux tarball artifact; clippy and tests on macOS. Keep it green.
 - One logical change per commit; follow-ups as `fixup!` commits, autosquashed before pushing. RJ merges with rebase.

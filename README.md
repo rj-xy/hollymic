@@ -33,7 +33,7 @@ HollyMic is unofficial and not affiliated with Hollyland. It's for the Lark M2 o
 ## Install
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/rj-xy/hollymic/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/rj-xy/hollymic/staging/install.sh | bash
 ```
 
 It installs to `~/.local/bin/hollymic` with an app-menu entry (Linux) or `~/Applications/HollyMic.app` (macOS). No root, except once on Linux: a udev rule so your user can talk to the receiver (it asks for your password; `--no-udev` skips it).
@@ -45,7 +45,7 @@ It installs to `~/.local/bin/hollymic` with an app-menu entry (Linux) or `~/Appl
 Run the same command again. It stops HollyMic, replaces it, and starts it again if it was running.
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/rj-xy/hollymic/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/rj-xy/hollymic/staging/install.sh | bash
 ```
 
 ### Uninstall
@@ -53,13 +53,13 @@ curl -fsSL https://raw.githubusercontent.com/rj-xy/hollymic/main/install.sh | ba
 Keeps your settings:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/rj-xy/hollymic/main/install.sh | bash -s -- --uninstall
+curl -fsSL https://raw.githubusercontent.com/rj-xy/hollymic/staging/install.sh | bash -s -- --uninstall
 ```
 
 Removes the settings too:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/rj-xy/hollymic/main/install.sh | bash -s -- --uninstall --purge
+curl -fsSL https://raw.githubusercontent.com/rj-xy/hollymic/staging/install.sh | bash -s -- --uninstall --purge
 ```
 
 ## What it does

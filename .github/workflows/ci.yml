@@ -1,0 +1,58 @@
+# Checks every push and pull request: fmt, clippy (zero warnings), tests, shellcheck,
+# and a Linux tarball from scripts/package.sh kept as a build artifact for 14 days.
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  linux:
+    name: Linux (x86_64)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy, rustfmt
+      - uses: Swatinem/rust-cache@v2
+      - name: Format
+        run: cargo fmt --check
+      - name: Clippy
+        run: cargo clippy --all-targets --locked -- -D warnings
+      - name: Tests
+        run: cargo test --locked
+      - name: Shellcheck
+        run: shellcheck -S warning install.sh scripts/*.sh
+      - name: Package
+        run: scripts/package.sh
+      - uses: actions/upload-artifact@v7
+        with:
+          name: hollymic-linux-x86_64
+          path: dist/*
+          retention-days: 14
+
+  macos:
+    name: macOS (aarch64)
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy
+      - uses: Swatinem/rust-cache@v2
+      - name: Clippy
+        run: cargo clippy --all-targets --locked -- -D warnings
+      - name: Tests
+        run: cargo test --locked

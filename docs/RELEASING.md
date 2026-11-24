@@ -1,6 +1,6 @@
 # Releasing
 
-Not set up yet: there's no GitHub repository. This is the plan.
+GitHub repo [rj-xy/hollymic](https://github.com/rj-xy/hollymic) since 2026-11-24 (default branch `staging`); CI builds a Linux tarball artifact on every push. Releases aren't set up yet: this is the plan.
 
 ## Today: a local tarball
 
@@ -13,9 +13,9 @@ The tarball holds `hollymic`, `install.sh`, `README.md`, `VERSION`, `icons/holly
 
 ## Later: GitHub releases
 
-1. Create `github.com/rj-xy/hollymic` (personal account `rj-xy`; in `~/rj-xy` always use `GH_TOKEN="$(gh auth token --user rj-xy)"`).
+1. ~~Create `github.com/rj-xy/hollymic`~~ done 2026-11-24 (personal account `rj-xy`; in `~/rj-xy` always use `GH_TOKEN="$(gh auth token --user rj-xy)"`).
 2. A release workflow on tag `v*` that runs `scripts/package.sh` on `ubuntu-latest` (x86_64), `ubuntu-24.04-arm` (aarch64), `macos-14` (aarch64) and `macos-13` (x86_64), and uploads each `dist/*.tar.gz` and `.sha256` to the release.
-3. Fill in `download_latest` in `install.sh` (the commands are in its TODO comment), so `curl -fsSL https://raw.githubusercontent.com/rj-xy/hollymic/main/install.sh | bash` works.
+3. Fill in `download_latest` in `install.sh` (the commands are in its TODO comment), so `curl -fsSL https://raw.githubusercontent.com/rj-xy/hollymic/staging/install.sh | bash` works.
 4. Bump `version` in `Cargo.toml`, tag `vX.Y.Z`, push the tag.
 
 Linux binaries built on Ubuntu link against its glibc; build on the oldest Ubuntu still supported to run on older distros.

@@ -17,7 +17,7 @@ Status as of 2026-11-13 (first version, 0.1.0, not released). Update this file a
 | Start on login | 🟠 writes `~/.config/autostart/hollymic.desktop` | not tried through a real login |
 | Install, update, uninstall | 🟢 in a throwaway `$HOME`, without the udev step | see "Next tests" |
 | macOS | 🔴 type-checks only (`cargo check --target aarch64-apple-darwin`) | reading the receiver needs root and stops its audio; waiting for RJ's decision, see [macOS](#macos) |
-| GitHub repo, releases, one-liner download | ⏸ not started, on purpose | `install.sh` has a `download_latest` stub |
+| GitHub repo, releases, one-liner download | 🟢 repo and CI (2026-11-24); ⏸ releases and one-liner not started | [rj-xy/hollymic](https://github.com/rj-xy/hollymic), branch `staging`; `install.sh` has a `download_latest` stub |
 
 ## Fixed
 

@@ -8,7 +8,7 @@
 #   bash install.sh --no-udev           skip the Linux udev rule (no sudo)
 #
 # Later this runs as a one-liner and fetches the latest GitHub release:
-#   curl -fsSL https://raw.githubusercontent.com/rj-xy/hollymic/main/install.sh | bash
+#   curl -fsSL https://raw.githubusercontent.com/rj-xy/hollymic/staging/install.sh | bash
 # Until the repository is published it installs a tarball you already have:
 # --file, or the newest hollymic-*-<os>-<arch>.tar.gz in this folder or ~/Downloads.
 set -euo pipefail
