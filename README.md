@@ -2,6 +2,12 @@
 
 A small tray app for the **Hollyland Lark M2** wireless mic on **Linux** and **macOS**. It does what Hollyland's HollyAudio phone app does for the Lark M2, from your desktop: battery, noise cancellation, volume and the firmware check, without unplugging the receiver and moving it to a phone.
 
+## Acknowledgements
+
+Without the work of [khromov/hollyland-web-ui](https://github.com/khromov/hollyland-web-ui), this project would not have been possible. Many thanks! It reverse-engineered HollyAudio's USB protocol for its WebHID page, and HollyMic's protocol notes start from it. HollyMic re-checked them against HollyAudio 3.1.0 for Android and a real Lark M2. Details: [docs/PROTOCOL.md](docs/PROTOCOL.md).
+
+## Tray icon and window
+
 The tray icon is the USB-C receiver's body with its two lights, one per mic slot, lit the way the receiver's own LEDs are (the window shows the whole receiver, plug and all):
 
 ![Tray icon states on a dark and a light panel](docs/images/tray-states.gif)
@@ -120,10 +126,6 @@ cargo build --release
 ./target/release/hollymic --demo     # try it without a receiver
 scripts/package.sh                   # dist/hollymic-<version>-<os>-<arch>.tar.gz
 ```
-
-## Thanks
-
-The USB protocol notes come from [khromov/hollyland-web-ui](https://github.com/khromov/hollyland-web-ui), which reverse-engineered HollyAudio for its WebHID page. HollyMic re-checked them against HollyAudio 3.1.0 for Android and a real Lark M2. Details: [docs/PROTOCOL.md](docs/PROTOCOL.md).
 
 ## Licence
 
